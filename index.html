@@ -4,7 +4,6 @@
 	<head>
 		<script src="script.js"></script>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.5.0/math.js"> </script>
 		
 		<title>RT naloga</title>
 		<meta charset="utf-8">
@@ -21,5 +20,8 @@
             <input type="button" id="psiSin" value="Sinusni Psi" onclick="sinusniPsi()" style="padding: 20px"><br><br>
         </form>
         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <input type="button" id="racunaj" value="racunaj" onclick="racunaj()">
+        <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+        <input hidden type="button" id="next" value="next" onclick="next()">
 	</body>
 </html>
