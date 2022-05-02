@@ -15,10 +15,13 @@ function nalozi() {
    
 }
 
-function zamenjajPsi(){
-    if (sinusni)
-        sinusni = false;
-    else sinusni = true;
+function nakljucniPsi(){
+    sinusni = false;
+    racunaj()
+}
+
+function sinusniPsi(){
+    sinusni = true;
     racunaj()
 }
 
@@ -64,12 +67,12 @@ function sestaviPsi(){
             psi0[i] = Math.sqrt(2)*Math.sin(Math.PI*x[i]);
         }
     } else {
-        for(var i = 0; i < Nx; i++) {
-            psi0[i] = Math.random();
+        for(var j = 0;j < Nx;j++) {
+            psi0[j] = Math.random();
         }
         var normalizacija = integral(psi0);
-        for(var i = 0; i < Nx; i++) {
-            psi0[i] = Math.sqrt((psi0[i] * psi0[i]) / normalizacija);
+        for(var k = 0; k < Nx; k++) {
+            psi0[k] = Math.sqrt((psi0[k] * psi0[k]) / normalizacija);
         }
     }
     narisiGrafPsi(psi0);
@@ -88,7 +91,28 @@ function posodobiParametre() {
 function racunaj() {
     posodobiParametre()
     var psi0 = sestaviPsi();
-    var psi = [Nt][Nx];
+    const psi = new Array(Nt);
+    for (var i = 0; i < Nt; i++) {
+        psi[i] = new Array(Nx);
+    }
+
+    var psiComplex = [];
+
+    for (var j = 0; j < Nx; j++) {
+        psiComplex[j] = math.complex(psi0[j], 0);
+    }
+    psi[0] = psiComplex;
+
+    console.log(psi[0][1]);
+
+    for(var t = 0; t < Nt - 1; t++) {
+        for(var i = 1; i < Nx - 1; i++) {
+            psi[t + 1][i] = math.add(psi[t][i], math.multiply(math.multiply(math.complex(0, 1/2), dt/(dx * dx)), math.add(math.add(psi[t][i - 1], math.multiply(-1, math.multiply(2, psi[t][i]))), psi[t][i-1])));
+            
+        }
+    }
+
+    console.log(psi);
 }
 
 function makeArr(startValue, stopValue, cardinality) {
