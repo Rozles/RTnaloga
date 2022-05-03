@@ -4,12 +4,13 @@
 	<head>
 		<script src="script.js"></script>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/complex.js@2.1.1/complex.min.js"> </script>
 		
 		<title>RT naloga</title>
 		<meta charset="utf-8">
 	</head>
 	<body onload="nalozi()">
-        <h1>Schroedinger</h1>
+        <h1>Casovno odvisna Schroedingerjeva enacba za nakljucno zacetno valovno funkcijo</h1>
         <h2>Parametri</h2>
         <form>
             <label for="Nx">Nx :</label>
@@ -21,7 +22,12 @@
         </form>
         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
         <input type="button" id="racunaj" value="racunaj" onclick="racunaj()">
-        <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+        <input hidden type="button" id="reset" value="reset" onclick="reset()">
+        <input hidden type="button" id="back100" value="back 100" onclick="back100()">
+        <input hidden type="button" id="back10" value="back 10" onclick="back10()">
         <input hidden type="button" id="next" value="next" onclick="next()">
+        <input hidden type="button" id="next10" value="skip 10" onclick="next10()">
+        <input hidden type="button" id="next100" value="skip 100" onclick="next100()">
+        <input hidden type="button" id="next1000" value="skip 1000" onclick="next1000()">
 	</body>
 </html>
