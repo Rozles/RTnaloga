@@ -20,11 +20,13 @@ function nalozi() {
 }
 
 function nakljucniPsi(){
+    posodobiParametre();
     sinusni = false;
     psi0 = sestaviPsi();
     document.getElementById("reset").hidden = true;
     document.getElementById("back100").hidden = true;
     document.getElementById("back10").hidden = true;
+    document.getElementById("back").hidden = true;
     document.getElementById("next").hidden = true;
     document.getElementById("next10").hidden = true;
     document.getElementById("next100").hidden = true;
@@ -32,11 +34,13 @@ function nakljucniPsi(){
 }
 
 function sinusniPsi(){
+    posodobiParametre();
     sinusni = true;
     psi0 = sestaviPsi();
     document.getElementById("reset").hidden = true;
     document.getElementById("back100").hidden = true;
     document.getElementById("back10").hidden = true;
+    document.getElementById("back").hidden = true;
     document.getElementById("next").hidden = true;
     document.getElementById("next10").hidden = true;
     document.getElementById("next100").hidden = true;
@@ -149,12 +153,11 @@ function racunaj() {
         }
     }
 
-    console.log(psi)
-
     animacijaGraf();
     document.getElementById("reset").hidden = false;
     document.getElementById("back100").hidden = false;
     document.getElementById("back10").hidden = false;
+    document.getElementById("back").hidden = false;
     document.getElementById("next").hidden = false;
     document.getElementById("next10").hidden = false;
     document.getElementById("next100").hidden = false;
@@ -219,21 +222,21 @@ function next1000() {
 function back() {
     stevec--;
     if (stevec < 0)
-        stevec = Nt;
+        stevec = Nt -1;
     animacijaGraf();
 }
 
 function back10() {
-    stevec--;
+    stevec -= 10;
     if (stevec < 0)
-        stevec = Nt;
+        stevec = Nt -1;
     animacijaGraf();
 }
 
 function back100() {
-    stevec--;
+    stevec -= 100;
     if (stevec < 0)
-        stevec = Nt;
+        stevec = Nt -1;
     animacijaGraf();
 }
 
@@ -245,4 +248,4 @@ function makeArr(startValue, stopValue, cardinality) {
       arr.push(startValue + (step * i));
     }
     return arr;
-  }
+}
