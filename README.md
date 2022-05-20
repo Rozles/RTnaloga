@@ -1,4 +1,4 @@
-Casovno odvisna Schroedingerjeva enacba za nakljucno zacetno valovno funkcijo
+Časovno odvisna Schroedingerjeva enačba za naključno valovno funkcijo
 
 Program generira zacetno valovno funkcijo tako da na intervalu [0 : 1],
 tako da nakljucno izbere vrednosti v tockah diskretizacijske mreze nato pa jo normalizira.
