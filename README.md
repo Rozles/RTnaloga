@@ -1,5 +1,9 @@
 Simulation: https://rozles.github.io
 
+$$
+i \hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)
+$$
+
 Časovno odvisna Schroedingerjeva enačba za naključno začetno valovno funkcijo
 
 Program generira začetno valovno funkcijo tako da na intervalu [0 : 1] naključno izbere vrednosti v točkah diskretizacijske mreže nato pa jo normalizira.
